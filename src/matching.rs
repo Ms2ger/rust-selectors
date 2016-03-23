@@ -518,36 +518,16 @@ pub enum CommonStyleAffectingAttributeMode {
 
 // NB: This must match the order in `layout::css::matching::CommonStyleAffectingAttributes`.
 #[inline]
-pub fn common_style_affecting_attributes() -> [CommonStyleAffectingAttributeInfo; 5] {
+pub fn common_style_affecting_attributes() -> [CommonStyleAffectingAttributeInfo; 0] {
     [
-        CommonStyleAffectingAttributeInfo {
-            atom: atom!("hidden"),
-            mode: CommonStyleAffectingAttributeMode::IsPresent(HIDDEN_ATTRIBUTE),
-        },
-        CommonStyleAffectingAttributeInfo {
-            atom: atom!("nowrap"),
-            mode: CommonStyleAffectingAttributeMode::IsPresent(NO_WRAP_ATTRIBUTE),
-        },
-        CommonStyleAffectingAttributeInfo {
-            atom: atom!("align"),
-            mode: CommonStyleAffectingAttributeMode::IsEqual("left", ALIGN_LEFT_ATTRIBUTE),
-        },
-        CommonStyleAffectingAttributeInfo {
-            atom: atom!("align"),
-            mode: CommonStyleAffectingAttributeMode::IsEqual("center", ALIGN_CENTER_ATTRIBUTE),
-        },
-        CommonStyleAffectingAttributeInfo {
-            atom: atom!("align"),
-            mode: CommonStyleAffectingAttributeMode::IsEqual("right", ALIGN_RIGHT_ATTRIBUTE),
-        }
     ]
 }
 
 /// Attributes that, if present, disable style sharing. All legacy HTML attributes must be in
 /// either this list or `common_style_affecting_attributes`. See the comment in
 /// `synthesize_presentational_hints_for_legacy_attributes`.
-pub fn rare_style_affecting_attributes() -> [Atom; 3] {
-    [ atom!("bgcolor"), atom!("border"), atom!("colspan") ]
+pub fn rare_style_affecting_attributes() -> [Atom; 0] {
+    []
 }
 
 /// Determines whether the given element matches the given single selector.
